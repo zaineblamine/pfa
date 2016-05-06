@@ -13,11 +13,13 @@ var app = {
   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
   var notificationOpenedCallback = function(jsonData) {
     console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-    alert("Notification received:\n" + JSON.stringify(jsonData));
+    //alert("Notification received:\n" + JSON.stringify(jsonData));
+    //var text = '{"isActive":false,"message":"hello","additionalData":{"title":"title"}}';
     var text=JSON.stringify(jsonData);
     var obj = JSON.parse(text);
-    //var text = '{"isActive":false,"message":"hello","additionalData":{"title":"title"}}';
-    document.getElementById("notif").innerHTML=obj.message+ "<br>" +obj.additionalData.title;
+    var myMessage=obj.message+ "<br>" +obj.additionalData.title;
+    localStorage.setItem("message", myMessage);
+document.getElementById("notif").innerHTML = localStorage.getItem("message");
   };
 
   window.plugins.OneSignal.getIds(function(ids) {
@@ -40,11 +42,11 @@ var app = {
                                 {googleProjectNumber: "97377827043"},
                                 notificationOpenedCallback);
   window.plugins.OneSignal.setSubscription(true);
-  window.plugins.OneSignal.enableInAppAlertNotification(true);
-  var text=JSON.stringify(jsonData);
+  window.plugins.OneSignal.enableInAppAlertNotification(false);
+  /*var text=JSON.stringify(jsonData);
   var obj = JSON.parse(text);
   document.getElementById("notif").innerHTML=obj.additionalData.title + "<br>" +
-  obj.message;
+  obj.message;*/
 }, false);
     },
     // deviceready Event Handler
