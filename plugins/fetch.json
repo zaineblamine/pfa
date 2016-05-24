@@ -14,5 +14,14 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-nativestorage": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/GillesC/cordova-plugin-nativestorage.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

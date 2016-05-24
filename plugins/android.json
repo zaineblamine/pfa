@@ -12,6 +12,9 @@
         },
         "onesignal-cordova-plugin": {
             "PACKAGE_NAME": "com.company.app1"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.company.app1"
         }
     },
     "dependent_plugins": {}

@@ -8,6 +8,9 @@
     <feature name="OneSignalPush">
         <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
     </feature>
+    <feature name="NativeStorage">
+        <param name="android-package" value="NativeStorage" />
+    </feature>
     <allow-intent href="market:*" />
     <name>SecondEssaiPFA</name>
     <description>
