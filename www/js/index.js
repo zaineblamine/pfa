@@ -10,9 +10,10 @@ var app = {
     var text=JSON.stringify(jsonData);
     var obj = JSON.parse(text);
     if (text!=""){
-    var myMessage=obj.message+ "<br>" +obj.additionalData.title;
-    localStorage.setItem("message", myMessage);
-document.getElementById("notif").innerHTML = localStorage.getItem("message");
+      var myMessage=obj.additionalData.title+": "+obj.message+ "<br>";
+      localStorage.setItem("message", myMessage);
+      document.getElementById("notif").innerHTML = localStorage.getItem("message");
+
 }
   };
   window.plugins.OneSignal.getIds(function(ids) {
@@ -40,7 +41,7 @@ document.getElementById("notif").innerHTML = localStorage.getItem("message");
   document.getElementById("notif").innerHTML=obj.additionalData.title + "<br>" +
   obj.message;*/
 }, false);
-    },    
+    },
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
