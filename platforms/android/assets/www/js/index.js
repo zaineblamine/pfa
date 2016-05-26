@@ -16,7 +16,6 @@ var app = {
       localStorage.setItem("notif", myMessage);
       localStorage.setItem("date", date_heure());
       display();
-
 }
   };
   window.plugins.OneSignal.getIds(function(ids) {
